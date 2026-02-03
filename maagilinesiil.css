@@ -1,0 +1,437 @@
+html {
+    min-height: 100%;
+    background: linear-gradient(to bottom, #4B0082, #228B22);
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100%;
+    margin: 0;
+    padding: 0;
+    background: transparent; 
+    color: #ffe866;
+}
+
+header {
+    display: flex;
+    align-items: center;
+	justify-content: space-between;
+    padding: 20px;
+    background: transparent;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    flex: 1; 
+    min-height: calc(100vh - 80px - 60px); 
+    background: transparent;
+    padding-top: 40px;
+	margin-top: -80px;
+}
+
+/* Header */
+header {
+	display: flex;
+    align-items: center;
+    padding: 20px;
+    background: transparent;
+    justify-content: space-between;
+    position: relative;
+}
+
+.logo img {
+    width: 200px;       
+    height: auto;  
+    flex: 0 0 auto;
+    margin-top: 10px;
+    margin-left: 30px;	
+}
+
+.logo {
+	display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.logo img.main-logo {
+    width: 200px;
+    height: auto;
+}
+
+.logo img.brand-name {
+    width: 250px;
+    height: auto;
+    margin-top: -10px;
+	margin-left: -10px;
+}
+
+/* Brändi nimi */
+.brand-name-container {
+	position: relative;
+    margin-top: -40px;       
+    display: flex;
+	justify-content: flex-start;
+    align-items: flex-start;
+	margin-left: -60px;
+}
+
+.brand-name {
+    width: 250px;      
+    max-width: 100%;
+    height: auto;
+}
+
+nav {
+    position: absolute; 
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+nav ul {
+    display: flex;
+    gap: 40px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+nav li + li {
+    margin-left: 40px; 
+}
+
+nav a {
+	text-decoration: none;
+    color: #ffe866;
+    font-weight: bold;
+    font-size: 1.8rem;
+    padding: 10px 20px;
+    transition: transform 0.2s, color 0.2s;
+}
+
+nav a:hover {
+    color: #ffd900;       
+    transform: scale(1.05); 
+}
+
+/* Hero - pealkiri ja tekst */
+#hero {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    text-align: center;
+	width: 100%;
+	min-height: 20vh;
+}
+
+.hero-content {
+    max-width: 800px;
+	margin-top: -80px;
+	text-align: center;
+}
+
+.hero-content p {
+    font-size: 26px;
+    margin: 0;
+    margin-bottom: 60px;  
+}
+
+.hero-title {
+    width: 800px;
+    max-width: 95%;
+    margin-bottom: 10px;
+}
+#hero p {
+    font-size: 30px;
+    margin: 0px 0;
+}
+.hero-button {
+    display: block;       
+    margin: 20px auto 0; 
+    width: 250px;         
+    max-width: 90%;
+    cursor: pointer;      
+    transition: transform 0.2s;  
+}
+
+.hero-button:hover {
+    transform: scale(1.05);  
+}
+
+/* Brändisõnum */
+#message {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+#message h2 {
+    font-size: 2rem;
+    margin-bottom: 10px;
+}
+
+#message p {
+    font-size: 1.5rem;
+}
+
+/* Menüü */
+#brand-message {
+    text-align: center;
+    margin-bottom: 10px; 
+}
+
+.brand-text {
+    font-size: 1.5rem;
+    color: #ffe866; 
+    text-shadow: 0 0 6px rgba(255, 217, 0, 0.5); 
+} 
+
+#offers {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 40px; 
+    width: 100%;
+    max-width: 1000px;
+    margin-bottom: 40px;
+	margin-top: 5px;
+}
+
+.offer-item {
+    background: rgba(255, 255, 255, 0.05); 
+    border-radius: 15px;
+    padding: 20px;
+    text-align: center;
+    width: 220px;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.offer-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.4);
+}
+
+.offer-item img {
+    width: 200px;
+    height: 240px;        
+    object-fit: cover;   
+    border-radius: 15px;
+    margin-bottom: 10px;
+}
+
+.offer-item h2, .offer-item h3 {
+    font-size: 1.4rem;   
+    margin: 12px 0 6px;
+    font-weight: bold;
+}
+
+.offer-item p {
+    margin: 0;
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+.menu-title {
+    font-size: 2rem;
+    text-align: center;
+    margin-bottom: 30px;
+    color: #ffe866;
+    letter-spacing: 1px;
+	text-shadow: 0 0 6px rgba(255, 217, 0, 0.6);
+}
+
+main.menu-page {
+    margin-top: -50px; 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.price {
+    margin: 5px 0;
+    font-size: 1.2rem;
+}
+
+.price.normal {
+    text-decoration: line-through;
+    opacity: 0.6;
+}
+
+.price.magic {
+    color: #ffe866;
+    font-weight: bold;
+}
+
+/* Kontakt */
+.contact-content h1 {    
+    margin-bottom: 60px;     
+    color: #ffe866;
+	font-size: 2rem;   
+    text-align: center;
+}
+
+.contact-content p {
+    font-size: 1.5rem;       
+    line-height: 1.6;
+    color: #ffe866;
+    margin-bottom: 20px;
+}
+
+main.contact-page {
+    margin-top: -50px; 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+#footer {
+    background-color: #6800b3;
+    color: #FFD700;
+    display: flex;               
+    align-items: center;         
+    justify-content: center; 
+	gap: 20px; 
+	padding: 20px 30px;
+    box-sizing: border-box;           
+    flex-shrink: 0;
+	height: auto;
+}
+
+#footer p {
+    margin: 0;
+    line-height: 1;
+    font-size: 1rem;
+}
+
+.socials {
+    display: flex;
+    gap: 15px;     
+    align-items: center;	
+}
+
+.social-icon {
+    width: 30px;
+    height: auto;
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+
+.social-icon:hover {
+    transform: scale(1.2);
+}
+.map {
+                     
+    width: 100%;
+    max-width: 700px;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+    background: transparent;  
+	margin: 0 auto 40px;  
+    flex: none; 
+}
+
+/* Karussell */
+.carousel-container {
+    position: relative;
+    width: 80%;
+    max-width: 800px;
+    margin: 50px auto; 
+    display: flex;
+    align-items: center;
+	margin-top: 10px;
+}
+
+.carousel-track-container {
+    overflow: hidden;
+    flex: 1;
+}
+
+.carousel-track {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+}
+
+.carousel-item {
+    flex: 0 0 150px;  
+    height: 150px;
+    margin: 0 10px;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.carousel-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.carousel-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(255, 255, 255, 0.2);
+    border: none;
+    font-size: 2rem;        
+    cursor: pointer;
+    color: #ffe866;
+    padding: 10px;          
+    border-radius: 50%;
+    transition: background 0.2s, transform 0.2s;
+}
+
+.carousel-btn.prev {
+    left: -50px;    
+}
+
+.carousel-btn.next {
+    right: -50px;   
+}
+
+.carousel-btn:hover {
+    background-color: rgba(255, 255, 255, 0.5);
+    transform: translateY(-50%) scale(1.1);
+}
+
+/* Kaunistused */
+.decorations {
+    position: fixed; 
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    pointer-events: none; 
+    z-index: 0;          
+}
+
+.stars-1 {
+    position: fixed;
+    top: 270px;       
+    left: 10%;
+    transform: translateX(-50%);
+    width: 80px;
+    opacity: 0.6;
+}
+
+.stars-2 {
+  position: absolute;
+  top: 350px;
+  left: 12%;
+  width: 50px;
+  opacity: 0.6;
+  transform: scaleY(-1); 
+}
+
+.leaves-1 {
+    position: fixed;
+    bottom: 80px;
+    left: 90%;
+    transform: translateX(-50%);
+    width: 130px;
+    opacity: 0.7;
+}
+
