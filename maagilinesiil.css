@@ -145,6 +145,18 @@ nav a:hover {
     max-width: 95%;
     margin-bottom: 10px;
 }
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+  border: 0;
+}
+
 #hero p {
     font-size: 30px;
     margin: 0px 0;
@@ -323,8 +335,7 @@ main.contact-page {
 .social-icon:hover {
     transform: scale(1.2);
 }
-.map {
-                     
+.map {                
     width: 100%;
     max-width: 700px;
     border-radius: 15px;
@@ -333,6 +344,12 @@ main.contact-page {
     background: transparent;  
 	margin: 0 auto 40px;  
     flex: none; 
+}
+.map iframe {
+    width: 100%;
+    border: 0; 
+    display: block; 
+    border-radius: 15px; 
 }
 
 /* Karussell */
