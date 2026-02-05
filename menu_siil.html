@@ -23,7 +23,7 @@
   
   <nav>
     <ul>
-      <li><a href="index.html">Avaleht</a></li>
+      <li><a href="maagilinesiil.html">Avaleht</a></li>
       <li><a href="menu_siil.html">Menüü</a></li>
       <li><a href="kontakt.html">Kontakt</a></li>
     </ul>
@@ -35,6 +35,7 @@
     
 	<!-- Karussell -->
   <section id="carousel-section">
+  <h2 class="visually-hidden">Karussell – kuumad joogid</h2>
   <div class="carousel-container">
     <button class="carousel-btn prev">❮</button>
     
@@ -54,6 +55,7 @@
   </section>
 
 	<section id="brand-message">
+	<h2 class="visually-hidden">Brändisõnum</h2>
   <p class="brand-text">Lõõgastu, naudi rahu, tassi kohvi ja veidi maagiat Maagilises Siilis</p>
   </section>
 
@@ -62,7 +64,8 @@
   </section>
     
 	<section id="offers">
-  <div class="offer-item" id="kohv">
+	<h2 class="visually-hidden">Joogipakkumised</h2>
+    <div class="offer-item" id="kohv">
     <img src="kohv.png" alt="Kohv">
     <h3>Kohv</h3>
     <p class="price normal">2,50 €</p>
@@ -109,66 +112,78 @@
 
    <!-- Footer -->
 	<footer id="footer">
-    <p>© 2025 Maagiline Siil</p>
+    <p>© 2026 Maagiline Siil</p>
     <div class="socials">
-        <a href="index.html" target="_blank">
+        <a href="https://www.facebook.com" target="_blank">
             <img src="social1.png" alt="Facebook" class="social-icon">
         </a>
-        <a href="index.html" target="_blank">
+        <a href="https://www.instagram.com" target="_blank">
             <img src="social2.png" alt="Instagram" class="social-icon">
         </a>
     </div>
 </footer>
 
 <script>
-    const track = document.querySelector('.carousel-track');
+// Valime karusselli põhielemendid DOM-ist
+const track = document.querySelector('.carousel-track');
 const items = Array.from(track.children);
 const prevBtn = document.querySelector('.carousel-btn.prev');
 const nextBtn = document.querySelector('.carousel-btn.next');
 
+// Aktiivse slaidi indeks
 let currentIndex = 0;
-const itemWidth = items[0].getBoundingClientRect().width + 20; // pildi laius + margin
+
+// Ühe elemendi laius koos vahega (margin)
+const itemWidth = items[0].getBoundingClientRect().width + 20;
+
+// Automaatse liikumise intervall
 let autoSlideInterval;
 
+// Loome karussellile koopiad, et liikumine oleks sujuv (loop-efekt)
 items.forEach(item => {
     const clone = item.cloneNode(true);
     track.appendChild(clone);
 });
 
+// Kõik karusselli elemendid (originaalid + koopiad)
 const allItems = Array.from(track.children);
 const totalItems = allItems.length;
 
+// Funktsioon karusselli asukoha uuendamiseks
 function updateCarousel(animate = true) {
-    if (animate) {
-        track.style.transition = 'transform 0.5s ease-in-out';
-    } else {
-        track.style.transition = 'none';
-    }
+    // Kui animate = false, liigume ilma animatsioonita
+    track.style.transition = animate ? 'transform 0.5s ease-in-out' : 'none';
     track.style.transform = `translateX(-${currentIndex * itemWidth}px)`;
 }
 
+// Järgmise slaidi funktsioon
 function nextSlide() {
     currentIndex++;
     updateCarousel();
 
+    // Kui jõuame koopiate alasse, hüppame tagasi algusesse
     if (currentIndex >= items.length) {
         setTimeout(() => {
             currentIndex = 0;
-            updateCarousel(false); 
-        }, 500); 
+            updateCarousel(false);
+        }, 500);
     }
 }
 
+// Eelmise slaidi funktsioon
 function prevSlide() {
     currentIndex--;
+
+    // Kui liigume enne esimest elementi, hüppame viimasele
     if (currentIndex < 0) {
         currentIndex = items.length - 1;
-        updateCarousel(false); 
+        updateCarousel(false);
     } else {
         updateCarousel();
     }
 }
 
+// Nuppude klikisündmused
 nextBtn.addEventListener('click', () => {
     nextSlide();
     resetAutoSlide();
@@ -179,31 +194,37 @@ prevBtn.addEventListener('click', () => {
     resetAutoSlide();
 });
 
+// Automaatse karusselli käivitamine
 function startAutoSlide() {
     autoSlideInterval = setInterval(nextSlide, 3000);
 }
 
+// Automaatse liikumise reset kasutaja sekkumisel
 function resetAutoSlide() {
     clearInterval(autoSlideInterval);
     startAutoSlide();
 }
 
+// Karusselli esmane seadistus
 updateCarousel();
 startAutoSlide();
 
+// Karusselli elementidele kliki lisamine,
+// mis viib vastava joogi kirjelduse juurde lehel
 const carouselItems = document.querySelectorAll('.carousel-item');
 
 carouselItems.forEach(item => {
     item.addEventListener('click', () => {
         const targetId = item.getAttribute('data-target');
         const targetElement = document.getElementById(targetId);
+
         if (targetElement) {
             targetElement.scrollIntoView({ behavior: 'smooth' });
         }
     });
 });
+
 </script>
 
 </body>
 </html>
-
