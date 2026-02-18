@@ -450,6 +450,21 @@ main.contact-page {
     width: 130px;
     opacity: 0.7;
 }
+@media (min-width: 1600px) {
+
+  .hero-content {
+    max-width: 1100px;
+  }
+
+  #offers {
+    max-width: 1400px;
+  }
+
+  nav a {
+    font-size: 2rem;
+  }
+
+}
 
 
 
